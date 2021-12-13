@@ -28,8 +28,8 @@
 
         #chunsik {
             position: absolute;
-            left: 200px;
-            width: 200px;
+            left: 100px;
+            width: 430px;
         }
 
         #btnChun #chunsik {
@@ -98,6 +98,12 @@
         .neo:active {
             background-image: url(neoBtn2.PNG);
         }
+
+        .status {
+            position: absolute;
+            top: 500px;
+            left: 550px;
+        }
     </style>
 
 </head>
@@ -110,6 +116,11 @@
         <button type="button" class="apech"></button>
         <button type="button" class="muzi"></button>
         <button type="button" class="neo"></button>
+    </div>
+    <div class="status">
+        <span><input type="text">배팅액</span>
+        <span><input type="text">우승상금</span>
+        <span><input type="text">현재잔액</span>
     </div>
 
     <!-- 정의 -->
@@ -137,25 +148,14 @@
     </div>
     <!-- <input type="button" onclick="top.location.reload();" value=" 경기장변경 "> -->
 
-
-
-
-
-    <script>
-
-
-
-
-    </script>
-
-
     <script>
 
         const chunsicBtn = document.querySelector("#btnChun");
         console.log(chunsicBtn);
         chunsicBtn.onclick = function () {
-            chunsicBtn.classList.toggle("active");
+            chunsicBtn.classList.toggle("active")
         }
+
 
         var rate = 3;
 
@@ -297,7 +297,7 @@
                     // 현재 위치에 따라 표시
                     player[i].style.left = rally[i] + "px";  // 현재 위치
 
-
+                    chunsicBtn.classList.remove("active");
                 }
             }
 
