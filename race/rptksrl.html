@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=.
+  24 /f 9[], initial-scale=1.0">
+  <style>
+      table {
+        vertical-align: middle;
+        float: right;
+
+      }
+      button {
+        width: 5vw;
+        height: 5vh;
+        
+      }
+
+      #casio {
+        width : 20vw;
+        height: 30vh;
+      }
+      #casioHead {
+        width: 20vw;
+        height: 5vh;
+        border: 1px solid;
+      }
+
+      #casioInput {
+        width: 20vw;
+        height: 5vh;
+        border: 1px solid;
+      }
+  </style>
+  <title>계산기</title>
+</head>
+<body>
+
+  <table id="casio">
+    <tr>
+      <td colspan="4" id="casioHead"></td>
+    </tr>
+    <tr>
+      <td colspan="4" id="casioInput"></td>
+    </tr>
+    <tr class="casio_body">
+       <td><button class="casio_num">7</button></td>
+       <td><button class="casio_num">8</button></td>
+       <td><button class="casio_num">9</button></td>
+       <td><button class="casio_num">*</button></td> 
+    </tr>
+    <tr class="casio_body">
+      <td><button class="casio_num">4</button></td>
+      <td><button class="casio_num">5</button></td>
+      <td><button class="casio_num">6</button></td>
+      <td><button class="casio_num">/</button></td>
+    </tr>
+    <tr class="casio_body">
+      <td><button class="casio_num">1</button></td>
+      <td><button class="casio_num">2</button></td>
+      <td><button class="casio_num">3</button></td>
+      <td><button class="casio_num">+</button></td>
+    </tr>
+    <tr class="casio_body">
+      <td><button type="reset">C</button></td>
+      <td><button class="casio_num">0</button></td>
+      <td><button class="casio_num">.</button></td>
+      <td><button id="casioResult">=</button></td>
+    </tr>
+
+  </table>
+  
+
+<script>
+
+  // 숫자 클릭 시 casioHead와 
+  // 연산 클릭 시 casioHead에 출력
+  // = 클릭 시 연산 결과값 casioHead와 casioInput에 출력
+
+  console.log(document.querySelectorAll(".casio_num")[1].innerText);
+  const btn_num=document.querySelectorAll(".casio_num");
+  const numli=document.querySelector("#casioHead");
+  const btn_oper=document.querySelectorAll(".casio_oper");
+  const numResult=document.querySelector("#casioInput")
+ 
+
+
+  
+  let num1="";
+  let num2="";
+  let oper="";
+  for (let i = 0; i < btn_num.length; i++) {
+  
+    btn_num[i].onclick=function(){
+      if(btn_num[i].innerText=="*"||btn_num[i].innerText=="/"||btn_num[i].innerText=="+"||btn_num[i].innerText=="-"){
+        oper=btn_num[i].innerText;
+        if(oper !== ""){
+          return;
+        }
+        numli.innerText+=oper;
+        console.log(oper);
+      }else if(oper==="*"||oper==="/"||oper==="+"||oper==="-") {
+        num2=btn_num[i].innerText;
+        numli.innerText+=num2;
+        console.log(num2);
+      }else{
+        num1=btn_num[i].innerText;
+        numli.innerText+=num1;
+        console.log(num1);
+      
+
+      }
+      } 
+    }    
+
+    document.querySelector("#casioResult").onclick=function(){
+      numResult.innerText=eval(numli.innerText);
+      numli.innerText=eval(numli.innerText);
+      console.log(num1);
+      console.log(num2);
+      console.log(oper);
+      
+      console.log(Number(num1)+`${oper}`+Number(num2));
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    // let num1="";
+    // let num2="";
+    // let oper="";
+    // btn_num[i].onclick=function(){
+    //   if(oper===("*" || "/" || "+" || "-")){
+    //     oper=btn_num[i].innerText;
+    //     numli.innerText+=oper;
+    //     console.log(oper);
+    //   }else if(oper!=("*" || "/" || "+" || "-")) {
+    //     num1=btn_num[i].innerText;
+    //     numli.innerText+=num1;
+    //     console.log(num1);
+    //   }else {
+    //     num2=btn_num[i].innerText;
+    //     numli.innerText+=num2;
+    //     console.log(num2);        
+    //   }
+     
+    //   } 
+    // }  
+
+
+
+
+
+  // eval........
+  
+  // typeof(Number(btn_num[i].innerText))=="number"
+
+  // for (let i = 0; i < btn_oper.length; i++) {
+  //   let oper="";
+  // btn_oper[i].onclick=function(){
+  //   console.log(btn_oper[i].innerText);
+  //   oper+=btn_oper[i].innerText;
+  //   numli.innerText+=oper;
+  //   num=0;
+    
+  // }
+  // }
+
+
+
+</script>
+</body>
+</html>
+</body>
+</html>
