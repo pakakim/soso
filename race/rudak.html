@@ -101,7 +101,7 @@
 
         .status {
             position: absolute;
-            top: 500px;
+            top: 550px;
             left: 550px;
         }
     </style>
@@ -118,9 +118,9 @@
         <button type="button" class="neo"></button>
     </div>
     <div class="status">
-        <span><input type="text">배팅액</span>
-        <span><input type="text">우승상금</span>
-        <span><input type="text">현재잔액</span>
+        <span><input type="value" id="s1">배팅액</span>
+        <span><input type="value" id="s2">우승상금</span>
+        <span><input type="value" id="s3">현재잔액</span>
     </div>
 
     <!-- 정의 -->
@@ -262,24 +262,6 @@
 
                     // 현재 위치에 따라 표시
                     player[i].style.left = rally[i] + "px";  // 현재 위치
-                    // if (i == 0) {
-                    //     // player[i].style.top = 110 + (i * 50) + Math.abs(Math.sin((jump + rally[i]) / 70)) * 10 + "px";  // 거북이의 움직임
-
-                    //     // player[i].style.top = 80 + (i * 50) - Math.abs(Math.sin((jump + rally[i]) / 50)) * 30 + "px";  // 토끼의 움직임
-                    // } else if (i == 1) {
-                    //     // player[i].style.top = 110 + (i * 50) + Math.abs(Math.sin((jump + rally[i]) / 70)) * 10 + "px";  // 거북이의 움직임
-
-                    //     // rac[i].style.width = 60 - Math.abs(Math.sin((jump + rally[i]) / 50)) * 20 + "px"; // 벌레의 움직임
-                    //     // rac[i].style.height = 38;
-                    // } else if (i == 2) {
-                    //     // player[i].style.top = 110 + (i * 50) + Math.abs(Math.sin((jump + rally[i]) / 70)) * 10 + "px";  // 거북이의 움직임
-
-                    //     // player[i].style.top = 110 + (i * 50) - Math.abs(Math.sin((jump + rally[i]) / 50)) * 10 + "px";  // 달팽이의 움직임
-                    //     // rac[i].style.height = 38 - Math.abs(Math.cos((jump + rally[i]) / 50)) * 10 + "px";
-                    // } else if (i == 3) {
-                    //     // player[i].style.top = 110 + (i * 50) + Math.abs(Math.sin((jump + rally[i]) / 70)) * 10 + "px";  // 거북이의 움직임
-                    // }
-
 
                 } // for
 
